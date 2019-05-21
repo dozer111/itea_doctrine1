@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+    <h1>#{{ article.Id }} {{ article.Title }}</h1>
+    <hr>
+    <h2>
+        <a href="{{ path('get_category_by_id',{'id':article.category.Id}) }}">{{ article.category.title }}</a>
+    </h2>
+    <hr>
+    <img src="{{ asset(article.image) }}" alt="{{ article.title }}">
+    {{ article.body }}
+    <hr>
+    <p><b>{{ article.createdAt }}</b></p>
+{% endblock %}
